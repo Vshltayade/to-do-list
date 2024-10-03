@@ -70,12 +70,13 @@ h1{
     margin: 8px 0;
 }
 
-#list span{
+#list .task{
     font-size: 18px;
     font-weight: 500;
 }
 
 #list button{
+    position: relative;
     float: right;
 }
 
