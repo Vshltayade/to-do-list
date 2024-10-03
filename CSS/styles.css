@@ -37,19 +37,19 @@ h1{
 
 #create input{
     width: 350px;
-    height: 35px;
+    height: 40px;
     padding: 5px;
     outline: none;
     border: none;
     border-radius: 2px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 #create button{
     width: 100px;
-    height: 35px;
+    height: 40px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 18px;
     background-color: gold;
     border: none;
     border-radius: 2px;
@@ -80,7 +80,7 @@ h1{
 }
 
 .delete{
-    width: 35px;
+    width: 40px;
     height: 40px;
     margin-top: -5px;
     margin-right: -5px;
@@ -91,7 +91,7 @@ h1{
 }
 
 .edit{
-    width: 38px;
+    width: 43px;
     height: 40px;
     margin-top: -5px;
     margin-right: 5px;
