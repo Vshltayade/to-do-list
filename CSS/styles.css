@@ -111,6 +111,7 @@ h1{
     margin-right: -5px;
     background-color: red;
     color: white;
+    font-size: larger;
     border: none;
     border-radius: 2px;
 }
@@ -123,6 +124,7 @@ h1{
     margin-right: 5px;
     background-color: green;
     color: white;
+    font-size: larger;
     border: none;
     border-radius: 2px;
 }

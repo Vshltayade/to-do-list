@@ -7,6 +7,11 @@ const deleteBtn2 = document.getElementsByClassName('delete')[1];
 const deleteBtn3 = document.getElementsByClassName('delete')[2];
 const deleteBtn4 = document.getElementsByClassName('delete')[3];
 
+const editBtn1 = document.getElementsByClassName('edit')[0];
+const editBtn2 = document.getElementsByClassName('edit')[1];
+const editBtn3 = document.getElementsByClassName('edit')[2];
+const editBtn4 = document.getElementsByClassName('edit')[3];
+
 let tasks = [...list.children];
 
 todo.addEventListener('keyup', () => {
@@ -35,20 +40,17 @@ function addToList(str){
 
     const span = document.createElement('span');
     span.className = 'task';
-    span.style.paddingLeft = '5px';
     span.title = str;
-    span.style.fontSize = '16px';
-    span.style.width = '220px';
     if(str.length > 20) str = str.slice(0,20)+'...'
     span.innerHTML = str;
-
+    
     divv.appendChild(span);
 
     const time = document.createElement('span');
     let date = new Date();
     date = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
     time.innerHTML = date;
-    time.style.fontSize = '12px';
+    time.className = 'time';
 
     divv.appendChild(time);
 
@@ -70,6 +72,8 @@ function addToList(str){
     tasks.unshift(div);
 
     deleteb.addEventListener('click', () => deleteTodo(deleteb));
+
+    editb.addEventListener('click', () => editTodo(editb));
 }
 
 deleteBtn1.addEventListener('click', () => deleteTodo(deleteBtn1));
@@ -82,5 +86,24 @@ function deleteTodo(ele){
     ele.parentElement.remove();
     tasks.splice(tasks.indexOf(ele.parentElement),1);
     list = document.getElementById('list');
+}
+
+
+
+editBtn1.addEventListener('click', () => editTodo(editBtn1));
+editBtn2.addEventListener('click', () => editTodo(editBtn2));
+editBtn3.addEventListener('click', () => editTodo(editBtn3));
+editBtn4.addEventListener('click', () => editTodo(editBtn4));
+
+
+function editTodo(ele){
+    let change = ele.parentElement.children.item(1).children.item(0);
+    let str = prompt('Edit the task here', change.title) ?? change.title;
+    change.title = str;
+    if(str.length > 20) str = str.slice(0,20)+'...'
+    change.innerHTML = str;
+    let date = new Date();
+    date = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
+    change.parentElement.children.item(1).innerHTML = date;
 }
 
